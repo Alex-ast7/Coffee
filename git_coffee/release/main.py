@@ -4,16 +4,18 @@ import sys
 
 from PyQt5 import QtWidgets, QtCore, QtGui
 from PyQt5.QtWidgets import QMainWindow, QTableWidgetItem, QApplication
+
+from UI.mainUI import Ui_MainWindow
 from new_window import NewWindow
 from new_window2 import NewWindow2
-from mainUI import Ui_MainWindow
+
 
 
 class MyWidget(QMainWindow, Ui_MainWindow):
     def __init__(self):
         super().__init__()
         self.setupUi(self)
-        self.con = sqlite3.connect("../data/coffee.db")
+        self.con = sqlite3.connect("data/coffee.db")
         self.show_elem()
         self.pushbutton.clicked.connect(self.open_new_window)
         self.pushbutton3.clicked.connect(self.update)

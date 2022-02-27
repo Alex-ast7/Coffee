@@ -3,7 +3,8 @@ import sys
 
 from PyQt5 import QtWidgets, QtCore
 from PyQt5.QtWidgets import QMainWindow, QApplication
-from addEditCoffeeForm import NewWindowUI
+
+from UI.addEditCoffeeForm import NewWindowUI
 
 
 class NewWindow(QMainWindow, NewWindowUI):

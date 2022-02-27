@@ -4,7 +4,7 @@ import sys
 
 from PyQt5 import QtWidgets, QtCore
 from PyQt5.QtWidgets import QMainWindow, QApplication
-from addEditCoffeeForm import NewWindow2UI
+from UI.addEditCoffeeForm import NewWindow2UI
 
 
 class NewWindow2(QMainWindow, NewWindow2UI):
@@ -12,7 +12,7 @@ class NewWindow2(QMainWindow, NewWindow2UI):
         super().__init__()
         self.setupUi(self)
         self.id = id
-        self.con = sqlite3.connect("../data/coffee.db")
+        self.con = sqlite3.connect("data/coffee.db")
         cur = self.con.cursor()
         self.result = cur.execute(f"""select * from types where id = 
                 {int(self.id)}""").fetchall()
